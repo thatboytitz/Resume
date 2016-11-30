@@ -25,7 +25,7 @@
 				        		</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="edu in eduList">
+						<tr ng-repeat="edu in resume | filter: {'type': 'edu'} ">
 		          				<td>{{edu.school}}</td>
 		          				<td>{{edu.degree}}</td>
 		          				<td>{{edu.last_year}}</td>
@@ -33,9 +33,9 @@
 	        			</tbody>
 				</table>
 			</div>
-			<div class="container"><div class="col-md-2">
+			<div class="container"><div class="col-sm-2">
 			<h2>Skills</h2>
-			<ul ng-repeat="skill in skillList" class="list-group">
+			<ul ng-repeat="skill in resume | filter: {'type': 'skill'}" class="list-group">
 				<li class="list-group-item">{{skill.skill}}</li>
 			</ul>
 			</div></div>
@@ -48,7 +48,7 @@
 			        		</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="project in projectList">
+					<tr ng-repeat="project in resume | filter: {'type': 'project'}">
           					<td>{{project.title}}</td>
           					<td>{{project.description}}</td>
         					</tr>
