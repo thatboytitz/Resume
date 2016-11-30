@@ -2,10 +2,10 @@ var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
 var db = mongojs('resume', ['resume']);
-// var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname + '/public'));
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 app.get('/resume', function (req, res) {
       console.log('I received a GET request');
